@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+
+    <style>
+        nav{
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Text Analyzer</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Contact Us</a>
+          
+          </div>
+        </div>
+      </nav>
+      <form action="/analyzer" method="post" > {% csrf_token %}
+
+      <div class="form-floating container mt-5">
+        <textarea class="form-control" placeholder="Leave a comment here" name="text" style="height: 150px; width: 500px;"></textarea>
+        <label for="floatingTextarea2">Enter your text here</label>
+      </div>
+      <div class="m-lg-5">
+      <div class="form-check form-switch ">
+        <input class="form-check-input" type="checkbox" name="rempunc">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Remove Punctuation</label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" name="capital" >
+        <label class="form-check-label" for="flexSwitchCheckChecked">Capitalize</label>
+      </div>
+      <!-- <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" name="oneline" >
+        <label class="form-check-label" for="flexSwitchCheckChecked">Remove Extra Line</label>
+      </div> -->
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" name="remspace" >
+        <label class="form-check-label" for="flexSwitchCheckChecked">Remove Extra Spaces</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-lg">Analyze</button>
+
+      
+    </div>
+</form>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
